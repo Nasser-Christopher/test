@@ -8,12 +8,18 @@ var maxProfit = function(prices) {
 
     for (let index = 0; index < prices.length; index++)
     {
+        // If index @ pos 0, populate LowestFound
+        if (index == 0)
+            LowestFound = prices[index];
+
+
         // Always check for lowest encountered
-        if (prices[index] <= LowestFound || LowestFound == 0)
+        if (prices[index] <= LowestFound)
         {
             LowestFound = prices[index];
         }
 
+        // Finding Maximum SellingDiff possible
         if ((prices[index] - LowestFound) > SellingDiff)
         {
 
@@ -23,6 +29,7 @@ var maxProfit = function(prices) {
 
     }
     
+    // Return 0 if not possible to make profit
     if (SellingDiff <= 0)
         return 0;
     else
