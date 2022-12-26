@@ -13,7 +13,7 @@ var productExceptSelf = function(nums) {
         }
         else
         {
-            res[index] = (nums.reduce((a,b)=> a*b));
+            res[index] = (nums.filter(n => n > 0).reduce((a,b)=> a*b));
         }
 
 
