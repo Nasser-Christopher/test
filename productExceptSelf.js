@@ -7,7 +7,18 @@ var productExceptSelf = function(nums) {
 
     for (let index = 0; index < nums.length; index++)
     {
+        if (res[index] != 0)
+        {
+            res[index] = (nums.reduce((a,b)=> a*b) / (Math.abs(res[index])));
+        }
+        else
+        {
+            res[index] = (nums.reduce((a,b)=> a*b));
+        }
+
+
         
+         
     }
-    
+    return res;
 };
