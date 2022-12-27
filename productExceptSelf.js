@@ -25,10 +25,25 @@ var productExceptSelf = function(nums) {
         {
             // TODO: Check for edge cases (e.g. if val @ curr index = 0)
             // --:If edge case found, make all other results 0 (0*x=0)
+
+            // Edge case 1: Multiple (x>1) Zeroes Found
+            if (zeroesFound > 1)
+                res[index] = 0; 
+            
+            // Edge case 2: One (1) zero && curr index num is non-zero
+            else if (zeroesFound == 1 && nums[index] != 0)
+                res[index] = 0; 
+
+            // No zeroes found in passed array, divide out curr index val
+            else if (zeroesFound == 0)
+                res[index] = (productOfArray / nums[index]);
+
+            // Else deals with edge case 2, set resultant = total product  
+            else    
+                res[index] = productOfArray;
+
         }
 
-
-         
 
     return res;
 };
