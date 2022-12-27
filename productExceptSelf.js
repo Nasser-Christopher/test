@@ -11,6 +11,13 @@ var productExceptSelf = function(nums) {
         // --:In first loop, check for any 0's; if found, zeroesFound++
         // TODO: Check for edge cases (e.g. if val @ curr index = 0)
         // --:If edge case found, make all other results 0 (0*x=0)
+
+        let zeroesFound = 0;
+
+        for (let index = 0; index < nums.length; index++)
+        {
+            
+        }
          
     }
     return res;
