@@ -5,8 +5,6 @@
 var productExceptSelf = function(nums) {
     let res = Array(nums.length).fill(0);
        
-        // TODO: Keep count of TotalProduct and divide it out later
-
         let zeroesFound = 0;
         let productOfArray = 1;
 
@@ -23,9 +21,6 @@ var productExceptSelf = function(nums) {
         // Second Pass
         for (let index = 0; index < nums.length; index++)
         {
-            // TODO: Check for edge cases (e.g. if val @ curr index = 0)
-            // --:If edge case found, make all other results 0 (0*x=0)
-
             // Edge case 1: Multiple (x>1) Zeroes Found
             if (zeroesFound > 1)
                 res[index] = 0; 
@@ -41,7 +36,6 @@ var productExceptSelf = function(nums) {
             // Else deals with edge case 2, set resultant = total product  
             else    
                 res[index] = productOfArray;
-
         }
 
 
