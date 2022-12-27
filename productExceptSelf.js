@@ -3,7 +3,7 @@
  * @return {number[]}
  */
 var productExceptSelf = function(nums) {
-    let res = Array.from(nums);
+    let res = Array(nums.length).fill(0);
        
         // TODO: Two For loops (not nested), one to iterate, the other to multiply
         // --:In first loop, check for any 0's; if found, zeroesFound++
@@ -14,13 +14,13 @@ var productExceptSelf = function(nums) {
         let zeroesFound = 0;
         let productOfArray = 1;
 
-        // Check for 0
+        // First Pass 
         for (let index = 0; index < nums.length; index++)
         {
             if (nums[index] == 0) // 0 encountered in array
                 zeroesFound++;
             else
-                productOfArray *= nums[index];
+                productOfArray *= nums[index]; // Save for later
 
         }
 
