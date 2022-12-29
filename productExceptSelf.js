@@ -24,17 +24,13 @@ var productExceptSelf = function(nums) {
         // Second Pass
         for (let index = 0; index < nums.length; index++)
         {
-            
-            // Edge case: One (1) zero && curr index num is non-zero
-            if (zeroesFound == 1 && nums[index] != 0)
-                res[index] = 0; 
 
             // No zeroes found, so divide out curr index val
-            else if (zeroesFound == 0)
+            if (zeroesFound == 0)
                 res[index] = (productOfArray / nums[index]);
 
-            // Else deals with edge case, set resultant = total product  
-            else    
+            // Else deals with edge case, set 0 found = total product  
+            else if (zeroesFound == 1 && nums[index] == 0)   
                 res[index] = productOfArray;
         }
 
