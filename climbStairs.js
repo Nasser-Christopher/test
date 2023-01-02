@@ -3,18 +3,22 @@
  * @return {number}
  */
 var climbStairs = function(n) {
-    
-    let distinctMoves = [];
 
+    let stepOne = 1;
+    let stepTwo = 2;
+    
     // n = 1
-    if (n == 0)
+    if (n == 1)
         return 1;
 
-    if (distinctMoves[n] != 0)
-        return distinctMoves[n];
-
-    return distinctMoves[n] = climbStairs(n-1) + climbStairs(n-2);
-
+    for (let i = 3; i <= n; i++)
+    {
+        let tempVal = stepOne + stepTwo;
+        stepOne = stepTwo;
+        stepTwo = tempVal;
+    }
+    return stepTwo;
+    
     
 
 };
